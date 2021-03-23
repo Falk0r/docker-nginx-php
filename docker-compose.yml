@@ -9,6 +9,25 @@ web:
     - php
 
 php:
-  image: php:8-fpm
+  build: .docker
   volumes: 
     - ./code:/code
+  links: 
+    - mysql
+
+mysql:
+  image: mysql:latest
+  ports: 
+    - "3306:3306"
+  environment:
+    - MYSQL_ROOT_PASSWORD=password
+
+phpmyadmin:
+  image: phpmyadmin/phpmyadmin
+  links: 
+    - mysql:db
+  ports: 
+    - "8082:80"
+  environment: 
+    - PMA_USER=root
+    - PMA_PASSWORD=password

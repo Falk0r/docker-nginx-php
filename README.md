@@ -4,6 +4,13 @@
 
 This is a simple web server powered by Nginx and run php files with php8-0.
 
+- MySQL
+  - you also might want to adjust the default password (which is *"password"*) in `docker-compose.yml`
+  - port 3306
+- phpmyadmin
+  - defaults see `docker-compose.yml`, also consider changing the password here too
+  - port [8082](http://localhost:8082)
+
 Yours codes is in the file "./code" and you can run the docker file with the command :
 ```bash
 docker-compose up
