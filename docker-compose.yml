@@ -31,3 +31,4 @@ phpmyadmin:
   environment: 
     - PMA_USER=root
     - PMA_PASSWORD=password
+    - UPLOAD_LIMIT=300M
